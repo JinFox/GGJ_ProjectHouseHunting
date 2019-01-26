@@ -1,6 +1,8 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class PoppingTextManager : MonoBehaviour
 {
@@ -19,6 +21,7 @@ public class PoppingTextManager : MonoBehaviour
 
 
     [SerializeField] GameObject poppingTextPrefab = null;
+    public Transform PoppingTextContainer;
     int poolSize = 20;
 
     Queue<PoppingText> poppingPool;
@@ -35,19 +38,19 @@ public class PoppingTextManager : MonoBehaviour
         {
             PoppingText p = GameObject.Instantiate(poppingTextPrefab).GetComponent<PoppingText>();
             p.DisableText();
-            p.transform.SetParent(transform);
+            p.transform.SetParent(PoppingTextContainer);
             p.gameObject.SetActive(false);
             poppingPool.Enqueue(p);
         }
     }
     
-    public void PopText(string Content, Color color, Vector3 position, float duration = 1f)
+    public Tweener PopText(string Content, Color color, Vector3 position, float duration = 1f)
     {
         PoppingText p = poppingPool.Dequeue();
         p.gameObject.SetActive(true);
-        p.PopText(Content, color, position,duration);
         
         poppingPool.Enqueue(p);
+        return p.PopText(Content, color, position, duration);
     }
     
 }

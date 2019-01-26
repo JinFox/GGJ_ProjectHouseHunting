@@ -1,17 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 // REPRESENT A person searching a home (can be 1 or 2 person visually)
-public class HomeSeeker : MonoBehaviour
+public class HomeSeeker
 {
     List<Preference> preferences;
     // Start is called before the first frame update
-    void Start()
+    public HomeSeeker()
     {
         preferences = new List<Preference>();
         DrawPreferences();
-
 
         //TODO : REMOVE DEBUG
         Debug.Log("I am Bob here is my preference : ");
@@ -24,21 +24,47 @@ public class HomeSeeker : MonoBehaviour
     void DrawPreferences()
     {
         preferences.Clear();
-
+        List<PreferenceType> toAvoid = new List<PreferenceType>();
         int overallcursor = 0;
-        for (int i = 0; i < UnityEngine.Random.Range(2,4); i++)
+        int nbToDraw = UnityEngine.Random.Range(2, 5);
+        for (int i = 0; i < nbToDraw; i++)
         {
             Preference pref = new Preference();
-            pref.Randomize();
+            if (pref.nbPrefType <= toAvoid.Count)
+                break;
+
+            pref.Randomize(toAvoid);
+            toAvoid.Add(pref.Type);
             overallcursor += pref.Cursor; // may help to draw a less random not to have 3 "I LIKE" or 3 I dont like
             preferences.Add(pref);
         }
         
     }
 
-    // Update is called once per frame
-    void Update()
+    public int CalculateOverallScore(Room room)
     {
-        
+        int score = 0;
+
+        Sequence mySequence = DOTween.Sequence();
+        foreach (Item item in room.GetAttachedItems())
+        {
+            foreach(var p in preferences)
+            {
+                int localScore = p.GetScore(item.preference);
+
+                // POP TEXTS TO SEE WHAT IS GOOD OR BAD
+                if (localScore != 0)
+                {
+                    Tweener t = PoppingTextManager.Instance.PopText(
+                            item.preference.ToString(),
+                            localScore > 0 ? Utils.goodGreen:Utils.badRed,
+                            item.item.position, .2f);
+                    mySequence.Append(t);
+                    score += localScore;
+                }
+            }
+        }
+        Debug.Log("Score = " + score);
+        return score;
     }
 }

@@ -1,10 +1,22 @@
 using UnityEngine;
 using System;
-class UTILS
+using System.Collections.Generic;
+class Utils
 {
-        public static T RandomEnumValue<T> ()
+    public static Color goodGreen = new Color(.5f,.95f, .45f);
+    public static Color badRed = new Color(.95f, .67f, .45f);
+    public static T RandomEnumValue<T> (List<T> toAvoid = null)
         {
-            var v = Enum.GetValues (typeof (T));
-            return (T) v.GetValue (UnityEngine.Random.Range(0, v.Length));
+            List<T> list = new List<T>();
+        
+            foreach (T value in (T[])Enum.GetValues(typeof(T)))
+            {
+                list.Add(value);
+            }
+            foreach (T avoid in toAvoid)
+            {
+                list.Remove(avoid);
+            }
+            return list[UnityEngine.Random.Range(0, list.Count)];
         }
 }

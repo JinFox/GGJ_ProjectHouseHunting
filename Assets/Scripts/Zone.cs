@@ -14,18 +14,13 @@ public class Zone : MonoBehaviour
     public List<Item> _attachedPreference;
     [Range(1,5)]
     public int zoneSize = 1;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+    public List<Item> ItemList {
+        get
+        {
+            return _attachedPreference;
+        }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     private void OnDrawGizmos()
     {

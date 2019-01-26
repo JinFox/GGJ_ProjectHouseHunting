@@ -7,13 +7,11 @@ public class RoomGenerator : MonoBehaviour
     public GameObject roomPrefab;
     public List<Zone> zonePool; // Prefab
 
-    private void Start()
-    {
-        
-    }
+
 
     Zone        DrawCorrectZoneFromPool(List<Zone> pool, int maxZoneSize)
     {
+        // COuld use some variation
         List<Zone> viable = new List<Zone>();
         foreach (var z in pool)
         {

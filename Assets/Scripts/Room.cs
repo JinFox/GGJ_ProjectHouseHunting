@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -21,13 +22,9 @@ public class Room : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        wallpaper.color = Random.ColorHSV(0f, .8f, 0f, .5f, 0.5f, 1f);
+        wallpaper.color = UnityEngine.Random.ColorHSV(0f, .8f, 0f, .5f, 0.5f, 1f);
     }
 
-    int CalculateOverallScore()
-    {
-        return 0;
-    }
 
     public void AttachZone(Zone zone)
     {
@@ -38,7 +35,7 @@ public class Room : MonoBehaviour
         }
         if (currentZoneIndex >= zoneSlot.Count)
         {
-            Debug.LogWarning("TRYING TO INSERT TO MANY ZONE");
+            Debug.LogWarning("TRYING TO INSERT TOO MANY ZONE");
             return;
         }
         _attached.Add(zone);
@@ -48,5 +45,15 @@ public class Room : MonoBehaviour
         zone.transform.localPosition = Vector3.zero;
 
         currentZoneIndex += zone.zoneSize;
+    }
+
+    public List<Item> GetAttachedItems()
+    {
+        List<Item> items = new List<Item>();
+        foreach (var z in _attached)
+        {
+            items.AddRange(z.ItemList);
+        }
+        return items;
     }
 }
