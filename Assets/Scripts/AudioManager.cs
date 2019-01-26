@@ -3,7 +3,34 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-/*
+
+
+[System.Serializable]
+public class Sound
+{
+    public string name;
+    public AudioMixerGroup mixerGroup;
+    public AudioClip sound;
+    [Range(0, 1)]
+    public float volume = 1f;
+    [Range(0.1f, 3f)]
+    public float pitch = 1f;
+    public bool loop = false;
+    [HideInInspector]
+    public AudioSource source;
+
+    internal void SetSource(AudioSource source)
+    {
+        this.source = source;
+        source.volume = this.volume;
+        source.clip = this.sound;
+        source.pitch = this.pitch;
+        source.loop = this.loop;
+        source.playOnAwake = false;
+        source.outputAudioMixerGroup = this.mixerGroup;
+    }
+}
+
 public class AudioManager : MonoBehaviour
 {
     public static AudioManager Instance { get; private set; }
@@ -32,8 +59,6 @@ public class AudioManager : MonoBehaviour
 
     public void Play(string name)
     {
-        if (!GameSave.Sfx)
-            return;
         Sound s = Array.Find(sounds, sound => sound.name == name);
         if (s != null)
             s.source.Play();
@@ -46,7 +71,7 @@ public class AudioManager : MonoBehaviour
         {
             if (currentMusic.name == name) // don't change
             {
-                if (!currentMusic.source.isPlaying && GameSave.Music)
+                if (!currentMusic.source.isPlaying)
                     currentMusic.source.Play();
                 return;
             }
@@ -54,8 +79,7 @@ public class AudioManager : MonoBehaviour
             currentMusic.source.time = 0;
 
         }
-        if (!GameSave.Music)
-            return;
+      
         //float remainingTime = currentMusic.source.clip.length - currentMusic.source.time;
 
         Sound s = Array.Find(sounds, sound => sound.name == name);
@@ -76,4 +100,3 @@ public class AudioManager : MonoBehaviour
         }
     }
 }
-*/
