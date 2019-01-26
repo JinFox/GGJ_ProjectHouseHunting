@@ -29,7 +29,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4611968153828997076}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &609838761663051940
 SpriteRenderer:
@@ -108,7 +108,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4611968153828997076}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6068109114412126591
 SpriteRenderer:
@@ -158,7 +158,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &7568426279290087917
+--- !u!1 &7886920572865449672
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -166,36 +166,36 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8324810673804634283}
-  - component: {fileID: 5818458039159985529}
+  - component: {fileID: 5551911914400370742}
+  - component: {fileID: 8670908392014850865}
   m_Layer: 0
-  m_Name: Radio1
+  m_Name: Chandelier1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8324810673804634283
+--- !u!4 &5551911914400370742
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7568426279290087917}
+  m_GameObject: {fileID: 7886920572865449672}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.72153974, y: 1.1377854, z: 0}
+  m_LocalPosition: {x: 1.09, y: 1.4961412, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4611968153828997076}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &5818458039159985529
+--- !u!212 &8670908392014850865
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7568426279290087917}
+  m_GameObject: {fileID: 7886920572865449672}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -226,7 +226,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: bfd376b8c219c4248902ca60c4ebffce, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1e0029070ffdde946ad3dc0be81962f3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -247,7 +247,7 @@ PrefabInstance:
     - target: {fileID: 3184981542652786029, guid: e582b1027e9ffc94f938351803454054,
         type: 3}
       propertyPath: m_Name
-      value: Zone4
+      value: Zone4 Variant
       objectReference: {fileID: 0}
     - target: {fileID: 3184981542652786031, guid: e582b1027e9ffc94f938351803454054,
         type: 3}
@@ -263,7 +263,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _attachedPreference.Array.data[0].item
       value: 
-      objectReference: {fileID: 8324810673804634283}
+      objectReference: {fileID: 5551911914400370742}
     - target: {fileID: 3184981542652786031, guid: e582b1027e9ffc94f938351803454054,
         type: 3}
       propertyPath: _attachedPreference.Array.data[1].item
@@ -272,7 +272,7 @@ PrefabInstance:
     - target: {fileID: 3184981542652786031, guid: e582b1027e9ffc94f938351803454054,
         type: 3}
       propertyPath: _attachedPreference.Array.data[0].preference
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3184981542652786031, guid: e582b1027e9ffc94f938351803454054,
         type: 3}

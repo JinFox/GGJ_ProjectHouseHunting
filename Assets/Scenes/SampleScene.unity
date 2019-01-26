@@ -434,7 +434,7 @@ SpriteRenderer:
   m_Size: {x: 0.12, y: 0.23}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1864382363
@@ -482,6 +482,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fe1955dab4ef9a4e9e5e881ef0ea76b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  roomContainer: {fileID: 0}
+  SizeOfFlatCatalog: 5
 --- !u!4 &1881635195
 Transform:
   m_ObjectHideFlags: 0
@@ -515,9 +517,18 @@ MonoBehaviour:
   - {fileID: 54113100629218950, guid: 626ca7eb9d8b00649b33fa0034ae4b24, type: 3}
   - {fileID: 507215476823726514, guid: 6fc8283969280b444bf6ec2c0962066f, type: 3}
   - {fileID: 4611968153828997077, guid: 22498f2228eed144e9ec163a6995ac49, type: 3}
-  - {fileID: 8805724009179587719, guid: 9f0d536dc6956b24dbe2f11660553ac5, type: 3}
-  - {fileID: 3385102665734776269, guid: 1a6d65323575bdc4080c9dc340142f2b, type: 3}
-  - {fileID: 3310559956720622956, guid: afe099c281f221d419f2877215a7a78b, type: 3}
+  - {fileID: 6319669054834326983, guid: 8167c8c6672edf84cab3e314608c3567, type: 3}
+  - {fileID: 7645158414787950444, guid: 32408cd0991d15e409382b58f9b80719, type: 3}
+  - {fileID: 6388082291828732999, guid: 30327778b4fcda444bf04c58af80a814, type: 3}
+  - {fileID: 643542831719694109, guid: e335a25068ff2e94090441f390cdee77, type: 3}
+  - {fileID: 8439621128794469561, guid: 3ab9f4917fbf320429008e0bf2429593, type: 3}
+  - {fileID: 7645158414787950444, guid: 1bf6937d550aa344d9dea572599dae6d, type: 3}
+  - {fileID: 7384973996148521999, guid: 370437ecf1fb48641a83fbd109403691, type: 3}
+  - {fileID: 3425962596362115617, guid: b255a3ea170dc284382b1fd26117f276, type: 3}
+  - {fileID: 1337960544324839485, guid: 882800dbccd94994a80255796df8ae79, type: 3}
+  - {fileID: 3641152780035197036, guid: 42585d3b9686fe942956fb7a5d7db3fb, type: 3}
+  - {fileID: 5804961621963989267, guid: ddf564d5d41c5584eb17b7d0b52f65fe, type: 3}
+  - {fileID: 6044601293973018765, guid: a284bd8134fbdad46a598efe467b8b89, type: 3}
 --- !u!114 &1881635197
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -532,6 +543,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   poppingTextPrefab: {fileID: 1763935103440552514, guid: c6c9858f21dc8de498d58357c1a98865,
     type: 3}
+  PoppingTextContainer: {fileID: 0}
 --- !u!1 &1995012020
 GameObject:
   m_ObjectHideFlags: 0
@@ -605,7 +617,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1995012020}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.520587, y: -0.69391215, z: 0}
+  m_LocalPosition: {x: 2.74, y: -0.69391215, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
