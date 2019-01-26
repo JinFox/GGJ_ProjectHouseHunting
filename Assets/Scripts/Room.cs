@@ -6,17 +6,47 @@ public class Room : MonoBehaviour
 {
 
     public List<Transform>  zoneSlot;
-    public SpriteRenderer wallpaper;
+    int currentZoneIndex; // define witch zone to attach to
+    public SpriteRenderer   wallpaper;
+    List<Zone> _attached;
 
+    public int totalSlot
+    {
+        get
+        {
+            return zoneSlot.Count;
+        }
+    }
 
     // Start is called before the first frame update
     void Start()
     {
-           
+        wallpaper.color = Random.ColorHSV(0f, .8f, 0f, .5f, 0.5f, 1f);
     }
 
     int CalculateOverallScore()
     {
         return 0;
+    }
+
+    public void AttachZone(Zone zone)
+    {
+        if (_attached == null)
+        {
+            _attached = new List<Zone>();
+            currentZoneIndex = 0;
+        }
+        if (currentZoneIndex >= zoneSlot.Count)
+        {
+            Debug.LogWarning("TRYING TO INSERT TO MANY ZONE");
+            return;
+        }
+        _attached.Add(zone);
+        Transform zoneAnchor = zoneSlot[currentZoneIndex];
+
+        zone.transform.SetParent(zoneAnchor);
+        zone.transform.localPosition = Vector3.zero;
+
+        currentZoneIndex += zone.zoneSize;
     }
 }

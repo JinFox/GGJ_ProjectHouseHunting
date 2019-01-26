@@ -2,9 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
+public struct Item
+{
+    public PreferenceType preference;
+    public Transform item;
+};
+
 public class Zone : MonoBehaviour
 {
-    public List<PreferenceType> _attachedPreference;
+    public List<Item> _attachedPreference;
+    [Range(1,5)]
     public int zoneSize = 1;
 
     // Start is called before the first frame update
