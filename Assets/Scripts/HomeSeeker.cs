@@ -21,6 +21,7 @@ public class HomeSeeker
         }
     }
 
+    
     void DrawPreferences()
     {
         preferences.Clear();

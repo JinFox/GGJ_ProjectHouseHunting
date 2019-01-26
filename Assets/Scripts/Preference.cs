@@ -12,7 +12,7 @@ public enum PreferenceType
     FANCYNESS,
     ANIMALS
 };
-class Preference
+public class Preference
 {
     int[] possibleValues = {-1,1};
     public int nbPrefType;
