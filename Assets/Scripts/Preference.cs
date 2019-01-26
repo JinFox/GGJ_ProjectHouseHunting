@@ -2,17 +2,19 @@ using UnityEngine;
 using System;
 using System.Text;
 
+public enum PreferenceType
+{
+    HOT,
+    COLD,
+    COMFORT,
+    NOISE,
+    FANCYNESS,
+    ANIMALS
+};
 class Preference
 {
     int[] possibleValues = {-1,1};
-    public enum PreferenceType {
-        HOT,
-        COLD,
-        COMFORT,
-        NOISE,
-        FANCYNESS,
-        ANIMALS
-    };
+   
     PreferenceType _type;
     int _cursor; // -1 Hate it / 0 Neutral / 1 Like it ///////// POTENTIALLY -2 BIG NONO and 2 LOVEIT!!!!!
     
@@ -72,4 +74,6 @@ class Preference
 
         return sb.ToString();
     }
+
+
 }

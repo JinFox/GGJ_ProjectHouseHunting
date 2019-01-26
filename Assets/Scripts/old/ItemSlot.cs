@@ -6,6 +6,7 @@ public class ItemSlot : MonoBehaviour
 {
     Item _displayedItem = null;
     List<Item>  _availableItems;
+
     public void HideEverything()
     {
         // TODO: browse _availableItems and hide eveerything
