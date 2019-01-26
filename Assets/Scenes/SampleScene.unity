@@ -112,6 +112,75 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &255319307
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6921650338334874995, guid: 00c8ac518a66df54b9431a78d19cea11,
+        type: 3}
+      propertyPath: m_Name
+      value: Room
+      objectReference: {fileID: 0}
+    - target: {fileID: 6921650338334874996, guid: 00c8ac518a66df54b9431a78d19cea11,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6921650338334874996, guid: 00c8ac518a66df54b9431a78d19cea11,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6921650338334874996, guid: 00c8ac518a66df54b9431a78d19cea11,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6921650338334874996, guid: 00c8ac518a66df54b9431a78d19cea11,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6921650338334874996, guid: 00c8ac518a66df54b9431a78d19cea11,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6921650338334874996, guid: 00c8ac518a66df54b9431a78d19cea11,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6921650338334874996, guid: 00c8ac518a66df54b9431a78d19cea11,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6921650338334874996, guid: 00c8ac518a66df54b9431a78d19cea11,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6921650338334874996, guid: 00c8ac518a66df54b9431a78d19cea11,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6921650338334874996, guid: 00c8ac518a66df54b9431a78d19cea11,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6921650338334874996, guid: 00c8ac518a66df54b9431a78d19cea11,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 00c8ac518a66df54b9431a78d19cea11, type: 3}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -254,16 +323,10 @@ MonoBehaviour:
   roomPrefab: {fileID: 6921650338334874995, guid: 00c8ac518a66df54b9431a78d19cea11,
     type: 3}
   zonePool:
-  - {fileID: 106248298691533469, guid: a27c790dcc92e1e46b1ce71a4ef162f4, type: 3}
-  - {fileID: 106248298691533469, guid: a27c790dcc92e1e46b1ce71a4ef162f4, type: 3}
-  - {fileID: 106248298691533469, guid: a27c790dcc92e1e46b1ce71a4ef162f4, type: 3}
-  - {fileID: 106248298691533469, guid: a27c790dcc92e1e46b1ce71a4ef162f4, type: 3}
-  - {fileID: 106248298691533469, guid: a27c790dcc92e1e46b1ce71a4ef162f4, type: 3}
-  - {fileID: 106248298691533469, guid: eb34d187a58e19f49ab53abc10b2ae50, type: 3}
-  - {fileID: 106248298691533469, guid: a27c790dcc92e1e46b1ce71a4ef162f4, type: 3}
-  - {fileID: 106248298691533469, guid: eb34d187a58e19f49ab53abc10b2ae50, type: 3}
-  - {fileID: 106248298691533469, guid: eb34d187a58e19f49ab53abc10b2ae50, type: 3}
-  - {fileID: 106248298691533469, guid: a27c790dcc92e1e46b1ce71a4ef162f4, type: 3}
+  - {fileID: 2132079331256889896, guid: f7482170ff9538e479a2da4c6631c5f4, type: 3}
+  - {fileID: 54113100629218950, guid: 626ca7eb9d8b00649b33fa0034ae4b24, type: 3}
+  - {fileID: 507215476823726514, guid: 6fc8283969280b444bf6ec2c0962066f, type: 3}
+  - {fileID: 4611968153828997077, guid: 22498f2228eed144e9ec163a6995ac49, type: 3}
 --- !u!114 &1881635197
 MonoBehaviour:
   m_ObjectHideFlags: 0
