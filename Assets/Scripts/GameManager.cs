@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using System;
+using TMPro;
 
 [RequireComponent(typeof(RoomGenerator))]
 public class GameManager : MonoBehaviour
@@ -33,6 +35,17 @@ public class GameManager : MonoBehaviour
     public float startingTimer = 60f; // total duration of a game
     float _timer;
 
+    int totalPeopleHoused = 0;
+    float _customerSatisfaction = 2f;
+
+    #endregion
+    #region UIElements
+    public TextMeshProUGUI bubbleText;
+    public TextMeshProUGUI characterName;
+    public TextMeshProUGUI timerText;
+    public TextMeshProUGUI NumberPeopleText;
+    // temporary
+    public TextMeshProUGUI satisfactionText;
 
     #endregion
 
@@ -54,7 +67,8 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartGame();   
+        StartGame();
+        AudioManager.Instance.PlayMusic("MainMusic");
     }
 
     void    StartGame()
@@ -65,15 +79,20 @@ public class GameManager : MonoBehaviour
 
         _currentRoomDisplayed = _roomList[_currentRoomIndex];
         _currentRoomDisplayed.gameObject.SetActive(true);
-        
+
+        // set score 
+        totalPeopleHoused = 0;
+        _timer = startingTimer;
+        _customerSatisfaction = 2f;
+        UpdateScorePanel();
     }
 
     void    GetNewHomeSeeker()
     {
+        AudioManager.Instance.Play("ChangeFlat");
         if (_currentHomeSeeker == null)
             _currentHomeSeeker = new HomeSeeker();
         //SAMPLE _currentHomeSeeker.preferences[0].GetPreferenceText()
-
     }
 
     void RefillRooms()
@@ -109,5 +128,11 @@ public class GameManager : MonoBehaviour
         }
 
         _timer -= Time.deltaTime;
+        UpdateScorePanel();
+    }
+
+    private void UpdateScorePanel()
+    {
+       
     }
 }
