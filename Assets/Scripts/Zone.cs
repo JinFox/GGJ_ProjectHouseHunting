@@ -12,7 +12,7 @@ public struct Item
 public class Zone : MonoBehaviour
 {
     public List<Item> _attachedPreference;
-    [Range(1,5)]
+    [Range(1,6)]
     public int zoneSize = 1;
     public List<Item> ItemList {
         get
@@ -26,7 +26,7 @@ public class Zone : MonoBehaviour
     {
         
         Vector3 anchor = transform.position;
-        Vector3 up = Vector3.up * 2f;
+        Vector3 up = Vector3.up * 2.5f;
         Vector3 right = Vector3.right * zoneSize;
         Gizmos.color = Color.yellow;
         Gizmos.DrawLine(anchor, anchor + right);

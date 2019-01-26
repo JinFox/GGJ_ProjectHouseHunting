@@ -183,7 +183,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7886920572865449672}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.09, y: 1.4961412, z: 0}
+  m_LocalPosition: {x: 1.17, y: 2.002, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4611968153828997076}
@@ -244,51 +244,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3184981542652786029, guid: e582b1027e9ffc94f938351803454054,
-        type: 3}
-      propertyPath: m_Name
-      value: Zone4 Variant
-      objectReference: {fileID: 0}
-    - target: {fileID: 3184981542652786031, guid: e582b1027e9ffc94f938351803454054,
-        type: 3}
-      propertyPath: _attachedPreference.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3184981542652786031, guid: e582b1027e9ffc94f938351803454054,
-        type: 3}
-      propertyPath: zoneSize
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3184981542652786031, guid: e582b1027e9ffc94f938351803454054,
-        type: 3}
-      propertyPath: _attachedPreference.Array.data[0].item
-      value: 
-      objectReference: {fileID: 5551911914400370742}
-    - target: {fileID: 3184981542652786031, guid: e582b1027e9ffc94f938351803454054,
-        type: 3}
-      propertyPath: _attachedPreference.Array.data[1].item
-      value: 
-      objectReference: {fileID: 4689357455659219652}
-    - target: {fileID: 3184981542652786031, guid: e582b1027e9ffc94f938351803454054,
-        type: 3}
-      propertyPath: _attachedPreference.Array.data[0].preference
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 3184981542652786031, guid: e582b1027e9ffc94f938351803454054,
-        type: 3}
-      propertyPath: _attachedPreference.Array.data[2].item
-      value: 
-      objectReference: {fileID: 1240249981351313363}
-    - target: {fileID: 3184981542652786031, guid: e582b1027e9ffc94f938351803454054,
-        type: 3}
-      propertyPath: _attachedPreference.Array.data[2].preference
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3184981542652786031, guid: e582b1027e9ffc94f938351803454054,
-        type: 3}
-      propertyPath: _attachedPreference.Array.data[1].preference
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 3184981542652786030, guid: e582b1027e9ffc94f938351803454054,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -343,6 +298,51 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3184981542652786029, guid: e582b1027e9ffc94f938351803454054,
+        type: 3}
+      propertyPath: m_Name
+      value: Zone4 Variant_CK
+      objectReference: {fileID: 0}
+    - target: {fileID: 3184981542652786031, guid: e582b1027e9ffc94f938351803454054,
+        type: 3}
+      propertyPath: _attachedPreference.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3184981542652786031, guid: e582b1027e9ffc94f938351803454054,
+        type: 3}
+      propertyPath: zoneSize
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3184981542652786031, guid: e582b1027e9ffc94f938351803454054,
+        type: 3}
+      propertyPath: _attachedPreference.Array.data[0].item
+      value: 
+      objectReference: {fileID: 5551911914400370742}
+    - target: {fileID: 3184981542652786031, guid: e582b1027e9ffc94f938351803454054,
+        type: 3}
+      propertyPath: _attachedPreference.Array.data[1].item
+      value: 
+      objectReference: {fileID: 4689357455659219652}
+    - target: {fileID: 3184981542652786031, guid: e582b1027e9ffc94f938351803454054,
+        type: 3}
+      propertyPath: _attachedPreference.Array.data[0].preference
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3184981542652786031, guid: e582b1027e9ffc94f938351803454054,
+        type: 3}
+      propertyPath: _attachedPreference.Array.data[2].item
+      value: 
+      objectReference: {fileID: 1240249981351313363}
+    - target: {fileID: 3184981542652786031, guid: e582b1027e9ffc94f938351803454054,
+        type: 3}
+      propertyPath: _attachedPreference.Array.data[2].preference
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3184981542652786031, guid: e582b1027e9ffc94f938351803454054,
+        type: 3}
+      propertyPath: _attachedPreference.Array.data[1].preference
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e582b1027e9ffc94f938351803454054, type: 3}
