@@ -44,38 +44,43 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sounds:
-  - name: Talking
-    mixerGroup: {fileID: 0}
-    sound: {fileID: 0}
-    volume: 0
-    pitch: 0
+  - name: MainMusic
+    mixerGroup: {fileID: 243365621038664910, guid: 36deaefcd0a44e54891b816f9c01fe23,
+      type: 2}
+    sound: {fileID: 8300000, guid: 04a3deb9469d52b42b6a581235f95dd1, type: 3}
+    volume: 1
+    pitch: 1
     loop: 1
     source: {fileID: 0}
-  - name: 
-    mixerGroup: {fileID: 0}
-    sound: {fileID: 0}
-    volume: 0
-    pitch: 0
+  - name: Click
+    mixerGroup: {fileID: 243539934831261556, guid: 36deaefcd0a44e54891b816f9c01fe23,
+      type: 2}
+    sound: {fileID: 8300000, guid: 367b141cab4292d41aa9afe929d56eaa, type: 3}
+    volume: 1
+    pitch: 1
     loop: 0
     source: {fileID: 0}
-  - name: 
-    mixerGroup: {fileID: 0}
-    sound: {fileID: 0}
-    volume: 0
-    pitch: 0
+  - name: GoodRoom
+    mixerGroup: {fileID: 243539934831261556, guid: 36deaefcd0a44e54891b816f9c01fe23,
+      type: 2}
+    sound: {fileID: 8300000, guid: 7152de2e77bafc14192c89e99344af02, type: 3}
+    volume: 1
+    pitch: 1
     loop: 0
     source: {fileID: 0}
-  - name: 
-    mixerGroup: {fileID: 0}
-    sound: {fileID: 0}
-    volume: 0
-    pitch: 0
+  - name: BadRoom
+    mixerGroup: {fileID: 243539934831261556, guid: 36deaefcd0a44e54891b816f9c01fe23,
+      type: 2}
+    sound: {fileID: 8300000, guid: 5a8ae84e5ca969548b4feaa09908a0b5, type: 3}
+    volume: 1
+    pitch: 1
     loop: 0
     source: {fileID: 0}
-  - name: 
-    mixerGroup: {fileID: 0}
-    sound: {fileID: 0}
-    volume: 0
-    pitch: 0
+  - name: Talking
+    mixerGroup: {fileID: 243539934831261556, guid: 36deaefcd0a44e54891b816f9c01fe23,
+      type: 2}
+    sound: {fileID: 8300000, guid: 3ec5178902fcc2b419cc9e25c5e641bb, type: 3}
+    volume: 1
+    pitch: 1
     loop: 0
     source: {fileID: 0}

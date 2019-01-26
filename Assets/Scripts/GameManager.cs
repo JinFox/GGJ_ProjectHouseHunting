@@ -89,7 +89,7 @@ public class GameManager : MonoBehaviour
 
     void    GetNewHomeSeeker()
     {
-        AudioManager.Instance.Play("ChangeFlat");
+        
         if (_currentHomeSeeker == null)
             _currentHomeSeeker = new HomeSeeker();
         //SAMPLE _currentHomeSeeker.preferences[0].GetPreferenceText()

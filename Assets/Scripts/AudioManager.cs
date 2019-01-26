@@ -55,6 +55,10 @@ public class AudioManager : MonoBehaviour
             s.SetSource(gameObject.AddComponent<AudioSource>());
         }
     }
+    public void Start()
+    {
+        this.PlayMusic("MainMusic");
+    }
 
 
     public void Play(string name)
