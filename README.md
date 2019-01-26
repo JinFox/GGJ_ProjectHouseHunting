@@ -4,7 +4,7 @@
 "What home means to you"
 
 ## Team Members
-Joaquim RENARD (@JoaquimRENARD)
+Joaquim RENARD (Twitter @JoaquimRENARD)
 
 
 ## Technologies
