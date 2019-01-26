@@ -104,7 +104,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4274894561553906084}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.74, y: 0.69887877, z: 0}
+  m_LocalPosition: {x: 0.74, y: 0.95, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8439621128794469560}
@@ -247,12 +247,12 @@ PrefabInstance:
     - target: {fileID: 3184981542652786029, guid: e582b1027e9ffc94f938351803454054,
         type: 3}
       propertyPath: m_Name
-      value: ZoneBase
+      value: Zone8 Variant_CK
       objectReference: {fileID: 0}
     - target: {fileID: 3184981542652786031, guid: e582b1027e9ffc94f938351803454054,
         type: 3}
       propertyPath: _attachedPreference.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3184981542652786031, guid: e582b1027e9ffc94f938351803454054,
         type: 3}
@@ -264,6 +264,16 @@ PrefabInstance:
       propertyPath: _attachedPreference.Array.data[0].item
       value: 
       objectReference: {fileID: 8324515235546390238}
+    - target: {fileID: 3184981542652786031, guid: e582b1027e9ffc94f938351803454054,
+        type: 3}
+      propertyPath: _attachedPreference.Array.data[1].preference
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3184981542652786031, guid: e582b1027e9ffc94f938351803454054,
+        type: 3}
+      propertyPath: _attachedPreference.Array.data[1].item
+      value: 
+      objectReference: {fileID: 2463544167594982719}
     - target: {fileID: 3184981542652786030, guid: e582b1027e9ffc94f938351803454054,
         type: 3}
       propertyPath: m_LocalPosition.x
