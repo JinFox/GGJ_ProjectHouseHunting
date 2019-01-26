@@ -4,6 +4,7 @@ using UnityEngine;
 using DG.Tweening;
 using System;
 using TMPro;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(RoomGenerator))]
 public class GameManager : MonoBehaviour
@@ -35,20 +36,27 @@ public class GameManager : MonoBehaviour
     public float startingTimer = 60f; // total duration of a game
     float _timer;
 
-    int totalPeopleHoused = 0;
+    int _totalPeopleHoused = 0;
     float _customerSatisfaction = 2f;
 
     #endregion
-    #region UIElements
-    public TextMeshProUGUI bubbleText;
-    public TextMeshProUGUI characterName;
-    public TextMeshProUGUI timerText;
-    public TextMeshProUGUI NumberPeopleText;
-    // temporary
-    public TextMeshProUGUI satisfactionText;
 
+    #region Character
+    CharacterSkinController character;
+    
     #endregion
 
+    #region UIElements
+    public TextMeshProUGUI timerText;
+    public TextMeshProUGUI nbPeopleHousedText;
+    // temporary
+    public TextMeshProUGUI reviewRatingText;
+    public Button nextButton;
+    public Button moveInButton;
+    #endregion
+
+
+    bool _enableInteractions = false;
 
     void Awake()
     {
@@ -62,26 +70,27 @@ public class GameManager : MonoBehaviour
         {
             _roomGen = GetComponent<RoomGenerator>();
             _roomList = new List<Room>();
+            moveInButton.onClick.AddListener(MakeSeekerMoveIn);
+            nextButton.onClick.AddListener(SwitchToNextRoom);
         }
     }
     // Start is called before the first frame update
     void Start()
     {
         StartGame();
-        AudioManager.Instance.PlayMusic("MainMusic");
     }
 
     void    StartGame()
     {
         ResolveComponents();
-        RefillRooms();
         GetNewHomeSeeker();
+        RefillRooms();
 
         _currentRoomDisplayed = _roomList[_currentRoomIndex];
         _currentRoomDisplayed.gameObject.SetActive(true);
 
         // set score 
-        totalPeopleHoused = 0;
+        _totalPeopleHoused = 0;
         _timer = startingTimer;
         _customerSatisfaction = 2f;
         UpdateScorePanel();
@@ -89,10 +98,18 @@ public class GameManager : MonoBehaviour
 
     void    GetNewHomeSeeker()
     {
+        _enableInteractions = false;
+        _currentHomeSeeker = new HomeSeeker();
+
+        string s = _currentHomeSeeker.GetPreferencesFormatted();
+        CharacterSkinController.Instance.GenerateNewCharacter(s);
+        MakeCharacterEntrance();
         
-        if (_currentHomeSeeker == null)
-            _currentHomeSeeker = new HomeSeeker();
-        //SAMPLE _currentHomeSeeker.preferences[0].GetPreferenceText()
+    }
+
+    private void MakeCharacterEntrance()
+    {
+        
     }
 
     void RefillRooms()
@@ -108,6 +125,11 @@ public class GameManager : MonoBehaviour
     
     void SwitchToNextRoom()
     {
+        if (!_enableInteractions)
+        {
+            return ;
+        }
+        AudioManager.Instance.Play("Click");
         int nextIndex = (_currentRoomIndex + 1) % _roomList.Count;
         _currentRoomDisplayed.gameObject.SetActive(false);
         _currentRoomDisplayed = _roomList[nextIndex];
@@ -115,24 +137,48 @@ public class GameManager : MonoBehaviour
         _currentRoomIndex = nextIndex;
     }
 
+    private void MakeSeekerMoveIn()
+    {
+        if (!_enableInteractions)
+        {
+            return;
+        }
+        AudioManager.Instance.Play("Click");
+        int score = _currentHomeSeeker.CalculateOverallScore(_currentRoomDisplayed);
+    }
+
     // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            _currentHomeSeeker.CalculateOverallScore(_currentRoomDisplayed);
+            MakeSeekerMoveIn();
         }
-        if (Input.GetKeyDown(KeyCode.N))
+        else if (Input.GetKeyDown(KeyCode.N))
         {
             SwitchToNextRoom();
         }
+        else if (Input.GetKeyDown(KeyCode.A))
+        {
+            GetNewHomeSeeker();
+        }
+        else if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
+
+ 
 
         _timer -= Time.deltaTime;
         UpdateScorePanel();
     }
 
+
     private void UpdateScorePanel()
     {
-       
+        timerText.text = _timer.ToString("N1");
+        nbPeopleHousedText.text = _totalPeopleHoused.ToString();
+        reviewRatingText.text = _customerSatisfaction.ToString("N2") + " / 5";
+
     }
 }

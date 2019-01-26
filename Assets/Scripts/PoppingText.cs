@@ -15,14 +15,16 @@ public class PoppingText : MonoBehaviour
         text.text = "";
         text.enabled = false;
     }
-    public Tweener PopText(string Content, Color color, Vector3 position, float duration)
+    public Tweener PopText(string Content, Color color, Vector3 position, float mvt, float duration)
     {
         DOTween.Kill(transform);
         text.enabled = false;
-        transform.position = position;
+        
+        transform.position = new Vector3(position.x, position.y, transform.position.z);
         text.text = Content;
+        text.color = color;
         text.enabled = true;
-        return transform.DOMoveY(.5f, duration).SetEase(Ease.OutQuad).OnComplete(DisableText);
+        return transform.DOMoveY(position.y + mvt, duration).SetEase(Ease.OutQuad).OnComplete(DisableText);
     }
     
     public void DisableText()

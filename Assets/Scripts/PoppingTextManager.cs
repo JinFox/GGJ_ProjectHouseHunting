@@ -39,18 +39,19 @@ public class PoppingTextManager : MonoBehaviour
             PoppingText p = GameObject.Instantiate(poppingTextPrefab).GetComponent<PoppingText>();
             p.DisableText();
             p.transform.SetParent(PoppingTextContainer);
+            p.transform.position = PoppingTextContainer.position;
             p.gameObject.SetActive(false);
             poppingPool.Enqueue(p);
         }
     }
     
-    public Tweener PopText(string Content, Color color, Vector3 position, float duration = 1f)
+    public Tweener PopText(string Content, Color color, Vector3 position, float mvt = .5f,  float duration = 1f)
     {
         PoppingText p = poppingPool.Dequeue();
         p.gameObject.SetActive(true);
         
         poppingPool.Enqueue(p);
-        return p.PopText(Content, color, position, duration);
+        return p.PopText(Content, color, position, mvt, duration);
     }
     
 }

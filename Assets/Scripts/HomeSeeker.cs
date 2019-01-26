@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using System.Text;
 
 // REPRESENT A person searching a home (can be 1 or 2 person visually)
 public class HomeSeeker
@@ -13,17 +14,20 @@ public class HomeSeeker
         preferences = new List<Preference>();
         DrawPreferences();
 
-        //TODO : REMOVE DEBUG
-        Debug.Log("I am Bob here is my preference : ");
-        foreach (var pref in preferences)
-        {
-            Debug.Log(pref.GetPreferenceText("I"));
-        }
     }
 
-    
+    public string GetPreferencesFormatted ()
+    {
+        StringBuilder sb = new StringBuilder();
+        foreach (var pref in preferences)
+        {
+            sb.AppendLine(pref.GetPreferenceText("I"));
+        }
+        return sb.ToString();
+    }
     void DrawPreferences()
     {
+
         preferences.Clear();
         List<PreferenceType> toAvoid = new List<PreferenceType>();
         int overallcursor = 0;
@@ -34,9 +38,11 @@ public class HomeSeeker
             if (pref.nbPrefType <= toAvoid.Count)
                 break;
 
-            pref.Randomize(toAvoid);
+            pref.Randomize(toAvoid, -overallcursor); // keeps overall neutral characters
             toAvoid.Add(pref.Type);
-            overallcursor += pref.Cursor; // may help to draw a less random not to have 3 "I LIKE" or 3 I dont like
+            overallcursor += pref.Cursor; 
+           
+
             preferences.Add(pref);
         }
         
@@ -59,7 +65,9 @@ public class HomeSeeker
                     Tweener t = PoppingTextManager.Instance.PopText(
                             item.preference.ToString(),
                             localScore > 0 ? Utils.goodGreen:Utils.badRed,
-                            item.item.position, .7f);
+                            item.item.position,
+                            localScore > 0 ? .5f : -.5f,
+                            .7f);
                     //mySequence.Append(t);
                     score += localScore;
                 }

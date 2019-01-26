@@ -49,6 +49,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   roomContainer: {fileID: 927936029353741635}
   SizeOfFlatCatalog: 5
+  startingTimer: 60
+  bubbleText: {fileID: 0}
+  characterName: {fileID: 0}
+  timerText: {fileID: 0}
+  nbPeopleHousedText: {fileID: 0}
+  reviewRatingText: {fileID: 0}
+  nextButton: {fileID: 0}
+  moveInButton: {fileID: 0}
 --- !u!114 &927936027735092736
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -119,7 +127,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 927936028457397291}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 927936027735092743}

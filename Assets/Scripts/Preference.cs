@@ -20,7 +20,7 @@ public class Preference
     PreferenceType _type;
     int _cursor; // -1 Hate it / 0 Neutral / 1 Like it ///////// POTENTIALLY -2 BIG NONO and 2 LOVEIT!!!!!
     
-    public int Cursor {get{return _cursor;}}
+    public int Cursor {get{return _cursor;} set { _cursor = value; } }
     public PreferenceType Type {get{return _type;}}
 
     public Preference()
@@ -60,7 +60,7 @@ public class Preference
         switch (_type)
         {
             case PreferenceType.HOT:
-                sb.Append(" being hot.");
+                sb.Append(" being warm.");
             break;
             case PreferenceType.COLD:
                 sb.Append(" being cold.");
@@ -72,7 +72,7 @@ public class Preference
                 sb.Append(" loud noises.");
             break;
             case PreferenceType.FANCYNESS:
-                sb.Append(" having a fancy interior.");
+                sb.Append(" fancy rooms.");
             break;
             case PreferenceType.ANIMALS:
                 sb.Append(" having animals.");
