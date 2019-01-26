@@ -6,7 +6,7 @@ using DG.Tweening;
 // REPRESENT A person searching a home (can be 1 or 2 person visually)
 public class HomeSeeker
 {
-    List<Preference> preferences;
+    public List<Preference> preferences;
     // Start is called before the first frame update
     public HomeSeeker()
     {
@@ -45,7 +45,7 @@ public class HomeSeeker
     {
         int score = 0;
 
-        Sequence mySequence = DOTween.Sequence();
+        //Sequence mySequence = DOTween.Sequence();
         foreach (Item item in room.GetAttachedItems())
         {
             foreach(var p in preferences)
@@ -58,8 +58,8 @@ public class HomeSeeker
                     Tweener t = PoppingTextManager.Instance.PopText(
                             item.preference.ToString(),
                             localScore > 0 ? Utils.goodGreen:Utils.badRed,
-                            item.item.position, .2f);
-                    mySequence.Append(t);
+                            item.item.position, .7f);
+                    //mySequence.Append(t);
                     score += localScore;
                 }
             }

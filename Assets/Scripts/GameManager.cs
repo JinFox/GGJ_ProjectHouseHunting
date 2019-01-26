@@ -29,31 +29,54 @@ public class GameManager : MonoBehaviour
     int _currentRoomIndex;
     Room _currentRoomDisplayed;
 
+    #region SCORING AND TIMER
+    public float startingTimer = 60f; // total duration of a game
+    float _timer;
+
+
+    #endregion
+
+
     void Awake()
     {
         _instance = this;
         DOTween.Init();
     }
     
+    void ResolveComponents()
+    {
+        if (_roomGen == null)
+        {
+            _roomGen = GetComponent<RoomGenerator>();
+            _roomList = new List<Room>();
+        }
+    }
     // Start is called before the first frame update
     void Start()
     {
-        _roomGen = GetComponent<RoomGenerator>();
-        _roomList = new List<Room>();
+        StartGame();   
+    }
 
-        RefillRoom();
+    void    StartGame()
+    {
+        ResolveComponents();
+        RefillRooms();
+        GetNewHomeSeeker();
+
         _currentRoomDisplayed = _roomList[_currentRoomIndex];
         _currentRoomDisplayed.gameObject.SetActive(true);
-        GetNewHomeSeeker();
+        
     }
 
     void    GetNewHomeSeeker()
     {
+        if (_currentHomeSeeker != null)
          _currentHomeSeeker = new HomeSeeker();
+        //SAMPLE _currentHomeSeeker.preferences[0].GetPreferenceText()
 
     }
 
-    void RefillRoom()
+    void RefillRooms()
     {
         while (_roomList.Count < this.SizeOfFlatCatalog)
         {
@@ -84,5 +107,7 @@ public class GameManager : MonoBehaviour
         {
             SwitchToNextRoom();
         }
+
+        _timer -= Time.deltaTime;
     }
 }
