@@ -70,8 +70,8 @@ public class GameManager : MonoBehaviour
 
     void    GetNewHomeSeeker()
     {
-        if (_currentHomeSeeker != null)
-         _currentHomeSeeker = new HomeSeeker();
+        if (_currentHomeSeeker == null)
+            _currentHomeSeeker = new HomeSeeker();
         //SAMPLE _currentHomeSeeker.preferences[0].GetPreferenceText()
 
     }
