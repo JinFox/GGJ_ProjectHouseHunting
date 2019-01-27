@@ -6,6 +6,8 @@ using System;
 using TMPro;
 using UnityEngine.UI;
 
+
+
 [RequireComponent(typeof(RoomGenerator))]
 public class GameManager : MonoBehaviour
 {
@@ -166,6 +168,11 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (_timer < 0f) // Times Up!
+        {
+
+        }
+
         if (_enableInteractions)
         {
             AlternativeInput();
@@ -179,7 +186,9 @@ public class GameManager : MonoBehaviour
 
 
         _timer -= Time.deltaTime;
+
         UpdateScorePanel();
+        
     }
 
 
