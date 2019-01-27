@@ -48,7 +48,7 @@ MonoBehaviour:
     mixerGroup: {fileID: 243365621038664910, guid: 36deaefcd0a44e54891b816f9c01fe23,
       type: 2}
     sound: {fileID: 8300000, guid: 04a3deb9469d52b42b6a581235f95dd1, type: 3}
-    volume: 1
+    volume: 0.6
     pitch: 1
     loop: 1
     source: {fileID: 0}

@@ -56,4 +56,9 @@ public class Room : MonoBehaviour
         }
         return items;
     }
+
+    internal void DestroyRoom()
+    {
+        GameObject.Destroy(gameObject);
+    }
 }

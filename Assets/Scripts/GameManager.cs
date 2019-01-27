@@ -5,8 +5,7 @@ using DG.Tweening;
 using System;
 using TMPro;
 using UnityEngine.UI;
-
-
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(RoomGenerator))]
 public class GameManager : MonoBehaviour
@@ -38,8 +37,8 @@ public class GameManager : MonoBehaviour
     public float startingTimer = 60f; // total duration of a game
     float _timer;
 
-    int _totalPeopleHoused = 0;
-    float _customerSatisfaction = 2f;
+    int _nbPeopleHoused = 0;
+    float _reviewRating = 2f;
 
     #endregion
 
@@ -93,9 +92,9 @@ public class GameManager : MonoBehaviour
         _currentRoomDisplayed.gameObject.SetActive(true);
 
         // set score 
-        _totalPeopleHoused = 0;
+        _nbPeopleHoused = 0;
         _timer = startingTimer;
-        _customerSatisfaction = 2f;
+        _reviewRating = 2f;
         UpdateScorePanel();
     }
 
@@ -107,14 +106,23 @@ public class GameManager : MonoBehaviour
         string s = _currentHomeSeeker.GetPreferencesFormatted();
         CharacterSkinController.Instance.GenerateNewCharacter(s, true, OnCharacterGenerated);
         
-        
     }
 
     public void OnCharacterGenerated()
     {
         _enableInteractions = true;
     }
+    private void GetRidOfCurrentRoom()
+    {
+        _currentRoomDisplayed.gameObject.SetActive(false);
+        _currentRoomDisplayed.DestroyRoom();
+        _roomList.Remove(_currentRoomDisplayed);
+        _currentRoomIndex = 0;
+        _currentRoomDisplayed = _roomList[_currentRoomIndex];
+        RefillRooms();
+        _currentRoomDisplayed.gameObject.SetActive(true);
 
+    }
     void RefillRooms()
     {
         while (_roomList.Count < this.SizeOfFlatCatalog)
@@ -146,9 +154,22 @@ public class GameManager : MonoBehaviour
         {
             return;
         }
+        _enableInteractions = false;
         AudioManager.Instance.Play("Click");
-        int score = _currentHomeSeeker.CalculateOverallScore(_currentRoomDisplayed);
+        float score = _currentHomeSeeker.CalculateOverallScore(_currentRoomDisplayed, OnScoringSequenceFinished);
+        _reviewRating = Mathf.Clamp(_reviewRating + (score / 10f), 0f, 5f);
+        
     }
+
+    public void OnScoringSequenceFinished()
+    {
+        GetNewHomeSeeker();
+        GetRidOfCurrentRoom();
+        _nbPeopleHoused++;
+        _enableInteractions = true;
+    }
+
+   
 
     void AlternativeInput() // call to enable keyboard input
     {
@@ -165,12 +186,14 @@ public class GameManager : MonoBehaviour
             GetNewHomeSeeker();
         }
     }
+
     // Update is called once per frame
     void Update()
     {
         if (_timer < 0f) // Times Up!
         {
-
+            
+            EndGame();
         }
 
         if (_enableInteractions)
@@ -184,19 +207,24 @@ public class GameManager : MonoBehaviour
         }
 
 
-
         _timer -= Time.deltaTime;
 
         UpdateScorePanel();
         
     }
 
+    private void EndGame()
+    {
+        _enableInteractions = false;
+        ScoreSaving.SetScore(_nbPeopleHoused, _reviewRating);
+        SceneManager.LoadScene("WinScreen");
+    }
 
     private void UpdateScorePanel()
     {
         timerText.text = _timer.ToString("N1");
-        nbPeopleHousedText.text = _totalPeopleHoused.ToString();
-        reviewRatingText.text = _customerSatisfaction.ToString("N2") + " / 5";
+        nbPeopleHousedText.text = _nbPeopleHoused.ToString();
+        reviewRatingText.text = _reviewRating.ToString("N2") + " / 5";
         catalogIndex.text = (_currentRoomIndex + 1) + " / " + SizeOfFlatCatalog; 
     }
 }

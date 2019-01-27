@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 using System.Text;
+using System;
 
 // REPRESENT A person searching a home (can be 1 or 2 person visually)
 public class HomeSeeker
@@ -48,32 +49,68 @@ public class HomeSeeker
         
     }
 
-    public int CalculateOverallScore(Room room)
+    public int CalculateOverallScore(Room room, Action callback)
     {
         int score = 0;
+        List<Tweener> goodTween = new List<Tweener>();
+        List<Tweener> badTween = new List<Tweener>();
+        Sequence mySequence = DOTween.Sequence();
 
-        //Sequence mySequence = DOTween.Sequence();
         foreach (Item item in room.GetAttachedItems())
         {
-            foreach(var p in preferences)
+            foreach (var p in preferences)
             {
                 int localScore = p.GetScore(item.preference);
 
                 // POP TEXTS TO SEE WHAT IS GOOD OR BAD
                 if (localScore != 0)
                 {
+
                     Tweener t = PoppingTextManager.Instance.PopText(
                             item.preference.ToString(),
-                            localScore > 0 ? Utils.Instance.goodGreen :Utils.Instance.badRed,
+                            localScore > 0 ? Utils.Instance.goodGreen : Utils.Instance.badRed,
                             item.item.position,
                             localScore > 0 ? .5f : -.5f,
                             .7f);
-                    //mySequence.Append(t);
+
+                    if (localScore > 0)
+                    {
+                        goodTween.Add(t);
+                    }
+                    else
+                    {
+                        badTween.Add(t);
+                    }
+
+
                     score += localScore;
                 }
             }
         }
+
+        AddToSequence(goodTween, mySequence, () => AudioManager.Instance.Play("GoodRoom"));
+        AddToSequence(badTween, mySequence, () => AudioManager.Instance.Play("BadRoom"));
+
+        if (callback != null)
+            mySequence.OnComplete(() => callback());
+
         Debug.Log("Score = " + score);
         return score;
     }
+
+    private void AddToSequence(List<Tweener> tweenList, Sequence mySequence, Action OnSequenceStart)
+    {
+        for (int i = 0; i < tweenList.Count; i++)
+        {
+            if (i == 0)
+            {
+                mySequence.AppendCallback(() => OnSequenceStart());
+                mySequence.Append(tweenList[i]);
+            }
+            else
+                mySequence.Join(tweenList[i]);
+        }
+    }
+    
+  
 }

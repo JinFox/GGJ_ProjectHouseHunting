@@ -19,7 +19,6 @@ public class PoppingText : MonoBehaviour
     {
         DOTween.Kill(transform);
         text.enabled = false;
-        
         transform.position = new Vector3(position.x, position.y, transform.position.z);
         text.text = Content;
         text.color = color;

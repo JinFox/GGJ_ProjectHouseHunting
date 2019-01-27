@@ -8,10 +8,10 @@ You play as an Estate agent. Listen to your customers and find them the house th
 Hurry! Only the best Estate agents will get good ratings!
 
 ## Team Members
-Naoise Collins
-Catriona Corbett
-Conall Knight
-Joaquim Renard
+Naoise Collins  
+Catriona Corbett  
+Conall Knight  
+Joaquim Renard  
 
 ## Technologies
 Unity

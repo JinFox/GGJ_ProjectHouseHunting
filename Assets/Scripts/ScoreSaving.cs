@@ -28,7 +28,7 @@ public static class ScoreSaving
     public static void Load()
     {
 
-        //maxNbHoused = PlayerPrefs.SetInt("maxNbHoused", nbHoused);
-        //maxRating = PlayerPrefs.SetFloat("maxRating", rating);
+        maxNbHoused = PlayerPrefs.GetInt("maxNbHoused", nbHoused);
+        maxRating = PlayerPrefs.GetFloat("maxRating", rating);
     }
 }
