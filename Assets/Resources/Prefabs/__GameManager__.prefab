@@ -50,7 +50,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   roomContainer: {fileID: 927936029353741635}
   SizeOfFlatCatalog: 5
-  startingTimer: 60
+  startingTimer: 10
   timerText: {fileID: 0}
   nbPeopleHousedText: {fileID: 0}
   reviewRatingText: {fileID: 0}

@@ -4,8 +4,8 @@ using UnityEngine;
 
 public static class ScoreSaving
 {
-    static int           nbHoused = 0;
-    static float         rating = 0.0f;
+    public static int           nbHoused = 0;
+    public static float         rating = 0.0f;
     public static int    maxNbHoused = 0;
     public static float  maxRating = 0.0f;
 
