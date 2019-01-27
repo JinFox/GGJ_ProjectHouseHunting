@@ -9,6 +9,8 @@ public class Room : MonoBehaviour
     public List<Transform>  zoneSlot;
     int currentZoneIndex; // define witch zone to attach to
     public SpriteRenderer   wallpaper;
+
+    public List<Sprite> possibleWallPaper;
     List<Zone> _attached;
 
     public int totalSlot
@@ -23,6 +25,7 @@ public class Room : MonoBehaviour
     void Start()
     {
         wallpaper.color = UnityEngine.Random.ColorHSV(0f, .8f, 0f, .5f, 0.5f, 1f);
+        wallpaper.sprite = possibleWallPaper[UnityEngine.Random.Range(0, possibleWallPaper.Count)];
     }
 
 
