@@ -32,7 +32,7 @@ public class HomeSeeker
         preferences.Clear();
         List<PreferenceType> toAvoid = new List<PreferenceType>();
         int overallcursor = 0;
-        int nbToDraw = UnityEngine.Random.Range(2, 5);
+        int nbToDraw = UnityEngine.Random.Range(2, 4);
         for (int i = 0; i < nbToDraw; i++)
         {
             Preference pref = new Preference();

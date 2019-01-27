@@ -50,7 +50,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   roomContainer: {fileID: 927936029353741635}
   SizeOfFlatCatalog: 5
-  startingTimer: 10
+  startingTimer: 60
   timerText: {fileID: 0}
   nbPeopleHousedText: {fileID: 0}
   reviewRatingText: {fileID: 0}
@@ -72,22 +72,24 @@ MonoBehaviour:
   roomPrefab: {fileID: 6921650338334874995, guid: 7bd06c6cf3c309546bb40b5c9735504f,
     type: 3}
   zonePool:
-  - {fileID: 2132079331256889896, guid: f7482170ff9538e479a2da4c6631c5f4, type: 3}
-  - {fileID: 54113100629218950, guid: 626ca7eb9d8b00649b33fa0034ae4b24, type: 3}
-  - {fileID: 507215476823726514, guid: 6fc8283969280b444bf6ec2c0962066f, type: 3}
-  - {fileID: 4611968153828997077, guid: 22498f2228eed144e9ec163a6995ac49, type: 3}
-  - {fileID: 6319669054834326983, guid: 8167c8c6672edf84cab3e314608c3567, type: 3}
-  - {fileID: 7645158414787950444, guid: 32408cd0991d15e409382b58f9b80719, type: 3}
-  - {fileID: 6388082291828732999, guid: 30327778b4fcda444bf04c58af80a814, type: 3}
-  - {fileID: 643542831719694109, guid: e335a25068ff2e94090441f390cdee77, type: 3}
-  - {fileID: 8439621128794469561, guid: 3ab9f4917fbf320429008e0bf2429593, type: 3}
-  - {fileID: 7645158414787950444, guid: 1bf6937d550aa344d9dea572599dae6d, type: 3}
-  - {fileID: 7384973996148521999, guid: 370437ecf1fb48641a83fbd109403691, type: 3}
-  - {fileID: 3425962596362115617, guid: b255a3ea170dc284382b1fd26117f276, type: 3}
-  - {fileID: 1337960544324839485, guid: 882800dbccd94994a80255796df8ae79, type: 3}
-  - {fileID: 3641152780035197036, guid: 42585d3b9686fe942956fb7a5d7db3fb, type: 3}
-  - {fileID: 5804961621963989267, guid: ddf564d5d41c5584eb17b7d0b52f65fe, type: 3}
-  - {fileID: 6044601293973018765, guid: a284bd8134fbdad46a598efe467b8b89, type: 3}
+  - {fileID: 4949906012051556047, guid: a426fd0c7ac4b674ebd17af7d16fc1ff, type: 3}
+  - {fileID: 4358841858675231161, guid: 544402a1f52462c41b09657b2c6cc54e, type: 3}
+  - {fileID: 6671299958868441147, guid: 3ff0540bed2040b4d8b7eb103ffc3604, type: 3}
+  - {fileID: 346432434704009884, guid: f850c635604961444b60e4aa1f8af6e2, type: 3}
+  - {fileID: 7699773683635947274, guid: 757fb51d9ce8c584389cfbfca8eb9c13, type: 3}
+  - {fileID: 171592958062156747, guid: 4e4339dc3a47e0c4aad842ce0f25dd9c, type: 3}
+  - {fileID: 6321585884837025125, guid: 102daa31aeb84b3458076dca6854f0a6, type: 3}
+  - {fileID: 4394299435843893990, guid: e4893ef6521c0c642a138dd3619eb553, type: 3}
+  - {fileID: 2461030740957303141, guid: 9271ee786c67982448e8b916537b3087, type: 3}
+  - {fileID: 8369688335226070568, guid: 4348ab0c544604f44a2b862d9249f655, type: 3}
+  - {fileID: 6815937838116161622, guid: 716f20c5b0eaf9342b95b28cccf75240, type: 3}
+  - {fileID: 4895700995314550192, guid: a57b3545144af59468e328c0a92d28f0, type: 3}
+  - {fileID: 1416444653495753114, guid: d82c827b6405dc94884272bfc949cc86, type: 3}
+  - {fileID: 5831803516013362833, guid: 5f024cb2e1cc9cc46a077d810ef708f7, type: 3}
+  - {fileID: 5787251175018654910, guid: 558f83776ae76ca46b88cf3345e5ba1a, type: 3}
+  - {fileID: 5403078725122265091, guid: e5894c82ad5f6884abb3781916179dda, type: 3}
+  - {fileID: 1143273854011564689, guid: c2759956bb5cdf64f906c67b3ab4c99e, type: 3}
+  - {fileID: 5494142885631017573, guid: 14a585c4c0dd2a74db7fbb422915483c, type: 3}
 --- !u!114 &927936027735092737
 MonoBehaviour:
   m_ObjectHideFlags: 0

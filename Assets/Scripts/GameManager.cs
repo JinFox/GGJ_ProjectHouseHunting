@@ -112,6 +112,7 @@ public class GameManager : MonoBehaviour
     {
         _enableInteractions = true;
     }
+
     private void GetRidOfCurrentRoom()
     {
         _currentRoomDisplayed.gameObject.SetActive(false);
@@ -166,7 +167,6 @@ public class GameManager : MonoBehaviour
         GetNewHomeSeeker();
         GetRidOfCurrentRoom();
         _nbPeopleHoused++;
-        _enableInteractions = true;
     }
 
    
@@ -192,17 +192,17 @@ public class GameManager : MonoBehaviour
     {
         if (_timer < 0f) // Times Up!
         {
-            
             EndGame();
         }
 
-        if (_enableInteractions)
-        {
-            AlternativeInput();
-        }
+        //if (_enableInteractions)
+        //{
+        //    AlternativeInput();
+        //}
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
+            _enableInteractions = false;
             Application.Quit();
         }
 
