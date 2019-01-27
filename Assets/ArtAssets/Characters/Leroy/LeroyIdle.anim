@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: IdleBob
+  m_Name: LeroyIdle
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -20,13 +20,13 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 21300000, guid: 764722703f64ce544833df4c4c5164c5, type: 3}
+      value: {fileID: 21300000, guid: f994009558006cd4b91c9cf7a16e10b9, type: 3}
     - time: 0.125
-      value: {fileID: 21300000, guid: d31fc88d55f9f7d46a99218793ddb38d, type: 3}
+      value: {fileID: 21300000, guid: b4020823f632c104db583d814a6cf4a2, type: 3}
     - time: 0.25
-      value: {fileID: 21300000, guid: 65b70f9bf45aa614e843c84f57c81275, type: 3}
+      value: {fileID: 21300000, guid: ccfdacc6bfa32b742b79ffe383b96f46, type: 3}
     - time: 0.375
-      value: {fileID: 21300000, guid: 02ec71f1e2812d246a40e4b4a6a1fb16, type: 3}
+      value: {fileID: 21300000, guid: 71bb725899621fc44ad81470fd8cf66a, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -46,10 +46,10 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 21300000, guid: 764722703f64ce544833df4c4c5164c5, type: 3}
-    - {fileID: 21300000, guid: d31fc88d55f9f7d46a99218793ddb38d, type: 3}
-    - {fileID: 21300000, guid: 65b70f9bf45aa614e843c84f57c81275, type: 3}
-    - {fileID: 21300000, guid: 02ec71f1e2812d246a40e4b4a6a1fb16, type: 3}
+    - {fileID: 21300000, guid: f994009558006cd4b91c9cf7a16e10b9, type: 3}
+    - {fileID: 21300000, guid: b4020823f632c104db583d814a6cf4a2, type: 3}
+    - {fileID: 21300000, guid: ccfdacc6bfa32b742b79ffe383b96f46, type: 3}
+    - {fileID: 21300000, guid: 71bb725899621fc44ad81470fd8cf66a, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}

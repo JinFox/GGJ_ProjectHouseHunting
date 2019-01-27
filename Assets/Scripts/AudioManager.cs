@@ -61,11 +61,17 @@ public class AudioManager : MonoBehaviour
     }
 
 
-    public void Play(string name)
+    public void Play(string name, bool interrupt = true)
     {
         Sound s = Array.Find(sounds, sound => sound.name == name);
         if (s != null)
-            s.source.Play();
+        {
+            if (interrupt || !s.source.isPlaying)
+            {
+                s.source.Play();
+            }
+        }
+            
     }
 
 
