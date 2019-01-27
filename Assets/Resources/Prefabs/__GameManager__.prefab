@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 927936027735092742}
   - component: {fileID: 927936027735092736}
   - component: {fileID: 927936027735092737}
+  - component: {fileID: 302169926}
   m_Layer: 0
   m_Name: __GameManager__
   m_TagString: Untagged
@@ -50,11 +51,10 @@ MonoBehaviour:
   roomContainer: {fileID: 927936029353741635}
   SizeOfFlatCatalog: 5
   startingTimer: 60
-  bubbleText: {fileID: 0}
-  characterName: {fileID: 0}
   timerText: {fileID: 0}
   nbPeopleHousedText: {fileID: 0}
   reviewRatingText: {fileID: 0}
+  catalogIndex: {fileID: 0}
   nextButton: {fileID: 0}
   moveInButton: {fileID: 0}
 --- !u!114 &927936027735092736
@@ -103,6 +103,20 @@ MonoBehaviour:
   poppingTextPrefab: {fileID: 1763935103440552514, guid: c6c9858f21dc8de498d58357c1a98865,
     type: 3}
   PoppingTextContainer: {fileID: 927936028457397284}
+--- !u!114 &302169926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 927936027735092741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64e70492f04f57f469e952b461033308, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  goodGreen: {r: 0.3183035, g: 0.9647059, b: 0.24056602, a: 1}
+  badRed: {r: 1, g: 0.3327386, b: 0.08962262, a: 1}
 --- !u!1 &927936028457397291
 GameObject:
   m_ObjectHideFlags: 0

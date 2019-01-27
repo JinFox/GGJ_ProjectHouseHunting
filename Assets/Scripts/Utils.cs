@@ -1,10 +1,27 @@
 using UnityEngine;
 using System;
 using System.Collections.Generic;
-class Utils
+class Utils : MonoBehaviour
 {
-    public static Color goodGreen = new Color(.5f,.95f, .45f);
-    public static Color badRed = new Color(.95f, .67f, .45f);
+    static Utils _instance;
+    public static Utils Instance
+    {
+        get
+        {
+            return _instance;
+        }
+        private set
+        {
+            _instance = value;
+        }
+    }
+    private void Awake()
+    {
+        _instance = this;
+    }
+
+    public Color goodGreen = new Color(.5f,.95f, .45f);
+    public Color badRed = new Color(.95f, .67f, .45f);
     public static T RandomEnumValue<T> (List<T> toAvoid = null)
         {
             List<T> list = new List<T>();

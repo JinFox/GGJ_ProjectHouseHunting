@@ -64,7 +64,7 @@ public class HomeSeeker
                 {
                     Tweener t = PoppingTextManager.Instance.PopText(
                             item.preference.ToString(),
-                            localScore > 0 ? Utils.goodGreen:Utils.badRed,
+                            localScore > 0 ? Utils.Instance.goodGreen :Utils.Instance.badRed,
                             item.item.position,
                             localScore > 0 ? .5f : -.5f,
                             .7f);

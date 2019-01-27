@@ -51,6 +51,7 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI nbPeopleHousedText;
     // temporary
     public TextMeshProUGUI reviewRatingText;
+    public TextMeshProUGUI catalogIndex;
     public Button nextButton;
     public Button moveInButton;
     #endregion
@@ -102,14 +103,14 @@ public class GameManager : MonoBehaviour
         _currentHomeSeeker = new HomeSeeker();
 
         string s = _currentHomeSeeker.GetPreferencesFormatted();
-        CharacterSkinController.Instance.GenerateNewCharacter(s);
-        MakeCharacterEntrance();
+        CharacterSkinController.Instance.GenerateNewCharacter(s, true, OnCharacterGenerated);
+        
         
     }
 
-    private void MakeCharacterEntrance()
+    public void OnCharacterGenerated()
     {
-        
+        _enableInteractions = true;
     }
 
     void RefillRooms()
@@ -147,8 +148,7 @@ public class GameManager : MonoBehaviour
         int score = _currentHomeSeeker.CalculateOverallScore(_currentRoomDisplayed);
     }
 
-    // Update is called once per frame
-    void Update()
+    void AlternativeInput() // call to enable keyboard input
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -162,12 +162,21 @@ public class GameManager : MonoBehaviour
         {
             GetNewHomeSeeker();
         }
-        else if (Input.GetKeyDown(KeyCode.Escape))
+    }
+    // Update is called once per frame
+    void Update()
+    {
+        if (_enableInteractions)
+        {
+            AlternativeInput();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             Application.Quit();
         }
 
- 
+
 
         _timer -= Time.deltaTime;
         UpdateScorePanel();
@@ -179,6 +188,6 @@ public class GameManager : MonoBehaviour
         timerText.text = _timer.ToString("N1");
         nbPeopleHousedText.text = _totalPeopleHoused.ToString();
         reviewRatingText.text = _customerSatisfaction.ToString("N2") + " / 5";
-
+        catalogIndex.text = (_currentRoomIndex + 1) + " / " + SizeOfFlatCatalog; 
     }
 }
