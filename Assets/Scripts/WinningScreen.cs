@@ -15,8 +15,8 @@ public class WinningScreen : MonoBehaviour
     {
         _restartButton.onClick.AddListener(OnRestartClicked);
         ScoreSaving.Load();
-        peopleHousedText.text = ScoreSaving.nbHoused + "(Highest " + ScoreSaving.maxNbHoused + ")";
-        reviewRatingText.text = ScoreSaving.rating.ToString("N1") + "(Highest " + ScoreSaving.maxRating + ")";
+        peopleHousedText.text = ScoreSaving.nbHoused + "     Highest " + ScoreSaving.maxNbHoused;
+        reviewRatingText.text = ScoreSaving.rating.ToString("N1") + "  Highest " + ScoreSaving.maxRating;
     }
     
     public void OnRestartClicked()
