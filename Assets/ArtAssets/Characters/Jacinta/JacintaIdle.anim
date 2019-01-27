@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: IdleBob
+  m_Name: JacintaIdle
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -20,13 +20,13 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 21300000, guid: 764722703f64ce544833df4c4c5164c5, type: 3}
+      value: {fileID: 21300000, guid: 17b57b06f0882e246b0f0257dce034bb, type: 3}
     - time: 0.125
-      value: {fileID: 21300000, guid: d31fc88d55f9f7d46a99218793ddb38d, type: 3}
+      value: {fileID: 21300000, guid: 55a2ab834009313458c5d63ac821e8bb, type: 3}
     - time: 0.25
-      value: {fileID: 21300000, guid: 65b70f9bf45aa614e843c84f57c81275, type: 3}
+      value: {fileID: 21300000, guid: 524e9f406e8c8a346b0aafdc8d752614, type: 3}
     - time: 0.375
-      value: {fileID: 21300000, guid: 02ec71f1e2812d246a40e4b4a6a1fb16, type: 3}
+      value: {fileID: 21300000, guid: c288e97d1688f324db9ddb5f6d379fe9, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -46,10 +46,10 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 21300000, guid: 764722703f64ce544833df4c4c5164c5, type: 3}
-    - {fileID: 21300000, guid: d31fc88d55f9f7d46a99218793ddb38d, type: 3}
-    - {fileID: 21300000, guid: 65b70f9bf45aa614e843c84f57c81275, type: 3}
-    - {fileID: 21300000, guid: 02ec71f1e2812d246a40e4b4a6a1fb16, type: 3}
+    - {fileID: 21300000, guid: 17b57b06f0882e246b0f0257dce034bb, type: 3}
+    - {fileID: 21300000, guid: 55a2ab834009313458c5d63ac821e8bb, type: 3}
+    - {fileID: 21300000, guid: 524e9f406e8c8a346b0aafdc8d752614, type: 3}
+    - {fileID: 21300000, guid: c288e97d1688f324db9ddb5f6d379fe9, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
